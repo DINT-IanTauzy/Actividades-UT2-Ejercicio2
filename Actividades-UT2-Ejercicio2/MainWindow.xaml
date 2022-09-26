@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Actividades_UT2_Ejercicio2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="371" Width="731">
+        Title="Calculadora" Height="386" Width="747" Icon="logo.png">
     <Grid Margin="0,0,2,3">
         <TextBlock HorizontalAlignment="Left" Margin="101,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="113" FontSize="18"><Run Text="Opera"/><Run Text="n"/><Run Text="dor 1"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="101,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="113" FontSize="18"><Run Text="Opera"/><Run Text="n"/><Run Text="dor "/><Run Text="2"/></TextBlock>

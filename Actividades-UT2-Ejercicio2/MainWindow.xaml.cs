@@ -25,20 +25,25 @@ namespace Actividades_UT2_Ejercicio2
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e){}
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Operador.Text != "")
+                Calcular_Button.IsEnabled = true;
+            else if (Operador.Text == "")
+                Calcular_Button.IsEnabled = false;
+        }
+
 
         private void Calcular_Button_Click(object sender, RoutedEventArgs e)
         {
-            //int num1 = int.Parse(Operando1.Text);
-            //int num2 = int.Parse(Operando2.Text);
             switch (Convert.ToChar(Operador.Text))
             {
                 case '+':
                     Resultado.Text = (int.Parse(Operando1.Text) + int.Parse(Operando2.Text)).ToString();
-                break;
+                    break;
                 case '-':
                     Resultado.Text = (int.Parse(Operando1.Text) - int.Parse(Operando2.Text)).ToString();
-                break;
+                    break;
                 case '/':
                     Resultado.Text = (int.Parse(Operando1.Text) / int.Parse(Operando2.Text)).ToString();
                     break;
@@ -49,13 +54,19 @@ namespace Actividades_UT2_Ejercicio2
                     break;
             }
         }
-
         private void Limpiar_Button_Click(object sender, RoutedEventArgs e)
         {
             Operando1.Text = "";
             Operando2.Text = "";
             Operador.Text = "";
             Resultado.Text = "";
+        }
+        public class MiException : Exception
+        {
+            public MiException() { }
+
+            public MiException(string message)
+                : base(message) { }
         }
     }
 }

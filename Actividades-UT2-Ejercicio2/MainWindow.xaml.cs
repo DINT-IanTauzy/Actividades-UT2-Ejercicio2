@@ -36,23 +36,27 @@ namespace Actividades_UT2_Ejercicio2
 
         private void Calcular_Button_Click(object sender, RoutedEventArgs e)
         {
-            switch (Convert.ToChar(Operador.Text))
+            try
             {
-                case '+':
-                    Resultado.Text = (int.Parse(Operando1.Text) + int.Parse(Operando2.Text)).ToString();
-                    break;
-                case '-':
-                    Resultado.Text = (int.Parse(Operando1.Text) - int.Parse(Operando2.Text)).ToString();
-                    break;
-                case '/':
-                    Resultado.Text = (int.Parse(Operando1.Text) / int.Parse(Operando2.Text)).ToString();
-                    break;
-                case '*':
-                    Resultado.Text = (int.Parse(Operando1.Text) * int.Parse(Operando2.Text)).ToString();
-                    break;
-                default:
-                    break;
-            }
+                switch (Convert.ToChar(Operador.Text))
+                {
+                    case '+':
+                        Resultado.Text = (int.Parse(Operando1.Text) + int.Parse(Operando2.Text)).ToString();
+                        break;
+                    case '-':
+                        Resultado.Text = (int.Parse(Operando1.Text) - int.Parse(Operando2.Text)).ToString();
+                        break;
+                    case '/':
+                        Resultado.Text = (int.Parse(Operando1.Text) / int.Parse(Operando2.Text)).ToString();
+                        break;
+                    case '*':
+                        Resultado.Text = (int.Parse(Operando1.Text) * int.Parse(Operando2.Text)).ToString();
+                        break;
+                    default:
+                        MessageBox.Show("Operador no permitido \nElige uno de estos operadores: [ + | - | / | * ]");
+                        break;
+                }
+            } catch (Exception) {}
         }
         private void Limpiar_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -61,12 +65,6 @@ namespace Actividades_UT2_Ejercicio2
             Operador.Text = "";
             Resultado.Text = "";
         }
-        public class MiException : Exception
-        {
-            public MiException() { }
-
-            public MiException(string message)
-                : base(message) { }
-        }
+        
     }
 }

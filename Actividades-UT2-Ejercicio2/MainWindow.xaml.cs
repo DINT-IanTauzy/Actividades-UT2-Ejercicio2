@@ -32,8 +32,6 @@ namespace Actividades_UT2_Ejercicio2
             else if (Operador.Text == "")
                 Calcular_Button.IsEnabled = false;
         }
-
-
         private void Calcular_Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -56,7 +54,10 @@ namespace Actividades_UT2_Ejercicio2
                         MessageBox.Show("Operador no permitido \nElige uno de estos operadores: [ + | - | / | * ]");
                         break;
                 }
-            } catch (Exception) {}
+            }
+            catch (Exception) {
+                MessageBox.Show("Se ha producido un error");            
+            }
         }
         private void Limpiar_Button_Click(object sender, RoutedEventArgs e)
         {
